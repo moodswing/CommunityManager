@@ -1,0 +1,55 @@
+﻿body
+{
+    margin: 0;
+}
+
+* {
+    font-family: 'tahoma', sans-serif;
+}
+
+.w100
+{
+    width: 100%;
+}
+
+.w200px {
+    width: 200px;
+}
+
+.table-div
+{
+    display: table;
+}
+
+.table-cell
+{
+    display: table-cell;
+}
+
+.valign-middle {
+    vertical-align: middle;
+}
+
+.icon-input {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    border: 1px solid gray;
+    height: 25px;
+}
+
+.mail-icon-input {
+    background: white url(/content/img/input-mail.png) 7px 5px no-repeat;
+}
+
+.mail-icon-input.input-validation-error {
+    background: white url(/content/img/input-error-mail.png) 7px 5px no-repeat;
+}
+
+.password-icon-input {
+    background: white url(/content/img/input-password.png) 7px 5px no-repeat;
+    margin-bottom: 5px;
+}
+
+.password-icon-input.input-validation-error {
+    background: white url(/content/img/input-error-password.png) 7px 5px no-repeat;
+}

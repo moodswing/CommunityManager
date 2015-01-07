@@ -1,0 +1,74 @@
+﻿@using System.Web.Optimization
+@model CommunityManager.ViewModels.Acceso.AccesoViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bienvenido</title>
+    @Styles.Render("~/Content/css/base")
+    @Styles.Render("~/Content/css/acceso")
+    @Scripts.Render("~/Bundles/jquery")
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="center-container">
+        <div class="table-div w100 vertical-middle">
+            <div class="table-cell left-text">
+                <p class="header">Bienvenido a la Comunidad Doña Ines</p>
+                <ul>
+                    <li>
+                        <img src="../../Content/img/compartir-ico.png" />
+                        <span>Comparte tus opiniones e ideas respecto a tu comunidad</span></li>
+                    <li>
+                        <img src="../../Content/img/publica-ico.png" />
+                        <span>Reclamos, eventos, productos, servicios, encuestas, proposiciones</span></li>
+                    <li>
+                        <img src="../../Content/img/ingreso-ico.png" />
+                        <span>INGRESO</span></li>
+                    <li class="pasos-ingreso"><span>1. Usa el <b>correo</b> que tienes registrado con la administración
+                        <br />
+                        (donde te llegan los gastos comunes)</span></li>
+                    <li class="pasos-ingreso"><span>2. Como <b>password</b> solo ingresa <b>12345</b> (luego podrás cambiarlo)</span></li>
+                    <li class="pasos-ingreso"><span>3. <b>Valida</b> el <b>número de departamento</b> donde habitas</span></li>
+                    <li class="pasos-ingreso"><span>4. Ingresa unos cuantos <b>datos básicos</b> de información y configuración</span></li>
+                    <li class="pasos-ingreso"><span>5. Listo, ya puedes empezar a <b>participar</b> activamente con tu comunidad</span></li>
+                </ul>
+            </div>
+            <div class="table-cell login-container">
+                <div class="login-box">
+                    <form id="LoginForm">
+                        <div class="login-box-header">Ingresa al sitio</div>
+                        <div>
+                            @Html.TextBoxFor(u => u.Email, new { @class = "icon-input mail-icon-input w200px", placeholder = "correo" })
+                        </div>
+                        <div>
+                            @Html.PasswordFor(u => u.Password, new { @class = "icon-input password-icon-input w200px", placeholder = "contraseña" })
+                        </div>
+                        <div class="recordar-usuario table-div">
+                            @Html.CheckBoxFor(u => u.Recordarme)
+                            <div class="table-cell valign-middle">
+                                @Html.LabelFor(m => m.Recordarme)
+                            </div>
+                        </div>
+                        <div id="LoadingLogin"></div>
+                        @Html.ValidationSummary(true)
+                        <div><a id="LoginButton" class="login-button w200px">ingresar</a></div>
+                        <div class="password-olvidado">
+                            <a>olvidaste tu password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
