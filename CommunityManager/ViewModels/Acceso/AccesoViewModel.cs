@@ -18,8 +18,6 @@ namespace CommunityManager.ViewModels.Acceso
 
         [Display(Name = "No cerrar sesión")]
         public bool Recordarme { get; set; }
-
-        public List<Usuario> Usuarios { get; set; }
     }
 
     public interface IAccesoViewModel
@@ -27,6 +25,5 @@ namespace CommunityManager.ViewModels.Acceso
         string Email { get; set; }
         string Password { get; set; }
         bool Recordarme { get; set; }
-        List<Usuario> Usuarios { get; set; }
     }
 }

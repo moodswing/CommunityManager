@@ -1,0 +1,23 @@
+﻿@model CommunityManager.ViewModels.Acceso.AccesoViewModel
+
+<div id="LoadingLogin"></div>
+<form id="LoginForm">
+    <div class="login-box-header">Ingresa al sitio</div>
+    <div>
+        @Html.TextBoxFor(u => u.Email, new { @class = "icon-input mail-icon-input w200px", placeholder = "correo" })
+    </div>
+    <div>
+        @Html.PasswordFor(u => u.Password, new { @class = "icon-input password-icon-input w200px", placeholder = "contraseña" })
+    </div>
+    <div class="recordar-usuario table-div">
+        @Html.CheckBoxFor(u => u.Recordarme)
+        <div class="table-cell valign-middle">
+            @Html.LabelFor(m => m.Recordarme)
+        </div>
+    </div>
+    @Html.ValidationSummary(true)
+    <div><a id="LoginButton" class="login-button w200px">ingresar</a></div>
+    <div class="password-olvidado">
+        <a>olvidaste tu password?</a>
+    </div>
+</form>

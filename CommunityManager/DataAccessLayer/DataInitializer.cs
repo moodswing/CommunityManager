@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using CommunityManager.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CommunityManager.DataAccessLayer
 {
@@ -8,15 +11,10 @@ namespace CommunityManager.DataAccessLayer
     {
         protected override void Seed(CommunityContext context)
         {
-            var students = new List<Usuario>
-            {
-                new Usuario { Email = "rob.arav@gmail.com", Password = "12345" },
-                new Usuario { Email = "test@gmail.com", Password = "12345" },
-                new Usuario { Email = "raravena@gmail.com", Password = "12345" }
-            };
-
-            students.ForEach(s => context.Usuarios.Add(s));
-            context.SaveChanges();
+            //context.Usuarios.AddOrUpdate(p => p.Email,
+            //    new Usuario { Email = "rob.arav@gmail.com", Password = "12345" },
+            //    new Usuario { Email = "test@gmail.com", Password = "12345" },
+            //    new Usuario { Email = "raravena@gmail.com", Password = "12345" });
         }
     }
 }

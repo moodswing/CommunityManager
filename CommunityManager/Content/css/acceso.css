@@ -129,3 +129,12 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }
+
+.login-box .validation-summary-errors ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    color: #975755;
+    padding-bottom: 7px;
+}

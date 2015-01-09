@@ -14,10 +14,19 @@
     @Styles.Render("~/Content/css/base")
     @Styles.Render("~/Content/css/acceso")
     @Scripts.Render("~/Bundles/jquery")
+    @Scripts.Render("~/Bundles/js-base")
+    @Scripts.Render("~/Bundles/acceso")
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            CommunityManagerBase().Init();
+            CommunityManagerAcceso().Init();
+        });
+    </script>
 </head>
 <body>
     <div class="center-container">
@@ -45,27 +54,7 @@
             </div>
             <div class="table-cell login-container">
                 <div class="login-box">
-                    <form id="LoginForm">
-                        <div class="login-box-header">Ingresa al sitio</div>
-                        <div>
-                            @Html.TextBoxFor(u => u.Email, new { @class = "icon-input mail-icon-input w200px", placeholder = "correo" })
-                        </div>
-                        <div>
-                            @Html.PasswordFor(u => u.Password, new { @class = "icon-input password-icon-input w200px", placeholder = "contraseña" })
-                        </div>
-                        <div class="recordar-usuario table-div">
-                            @Html.CheckBoxFor(u => u.Recordarme)
-                            <div class="table-cell valign-middle">
-                                @Html.LabelFor(m => m.Recordarme)
-                            </div>
-                        </div>
-                        <div id="LoadingLogin"></div>
-                        @Html.ValidationSummary(true)
-                        <div><a id="LoginButton" class="login-button w200px">ingresar</a></div>
-                        <div class="password-olvidado">
-                            <a>olvidaste tu password?</a>
-                        </div>
-                    </form>
+                    @Html.Partial("Partial/_LoginBox")
                 </div>
             </div>
         </div>

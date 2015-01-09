@@ -24,7 +24,7 @@ namespace CommunityManager
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            Database.SetInitializer(new DataInitializer());
+            //Database.SetInitializer(new DataInitializer());
 
             _container = Bootstrapper.ConfigureUnityContainer();
             MvcConfig.Register(_container, _unityGuid);
