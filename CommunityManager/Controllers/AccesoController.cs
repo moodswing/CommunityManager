@@ -65,7 +65,7 @@ namespace CommunityManager.Controllers
             {
             }
 
-            return Json(new { result = "Redirect", url = Url.Action("Acceso", "Acceso") });
+            return Json(new { result = "Redirect", url = Url.Action("Portada", "Inicio") });
         }
     }
 }
