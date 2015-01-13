@@ -1,8 +1,29 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@using CommunityManager.Infrastructure.Extensions
+@model CommunityManager.ViewModels.Acceso.IngresoDatosViewModel
 
-<div>
-    Configuración
-</div>
+<form id="LoginForm" method="post" action="@Url.Action("Acceso", "IngresarDatos")">
+    <div class="login-box-header">Ingresa tus datos</div>
+    <div>
+        @Html.TextBoxFor(u => u.Nombre, new { @class = "icon-input w200px question-icon-input", placeholder = "nombre" })
+    </div>
+    <div>
+        @Html.TextBoxFor(u => u.Apellido, new { @class = "icon-input w200px question-icon-input", placeholder = "apellido" })
+    </div>
+    <div>
+        @Html.DescriptionFor(u => u.NombreUsuario)
+        @Html.TextBoxFor(u => u.NombreUsuario, new { @class = "icon-input w200px question-icon-input", placeholder = "nombre de usuario" })
+    </div>
+    <div>
+        @Html.DescriptionFor(u => u.Password)
+        @Html.PasswordFor(u => u.Password, new { @class = "icon-input password-icon-input w200px", placeholder = "nuevo password" })
+    </div>
+    <div>
+        @Html.PasswordFor(u => u.ConfirmarPassword, new { @class = "icon-input password-icon-input w200px", placeholder = "confirmar nuevo password" })
+    </div>
+    <div>
+        @Html.DescriptionFor(u => u.NumeroVivienda)
+        @Html.TextBoxFor(u => u.NumeroVivienda, new { @class = "icon-input w200px number-icon-input", placeholder = "número de departamento" })
+    </div>
+    @Html.ValidationSummary(true)
+    <div><input type="submit" id="LoginButton" class="login-button w200px" value="acceder" /></div>
+</form>

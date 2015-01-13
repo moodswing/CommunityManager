@@ -19,6 +19,7 @@ namespace CommunityManager.App_Start
             var container = new UnityContainer()
                 .RegisterType<IUsuarioService, UsuarioService>()
                 .RegisterType<IAccesoViewModel, AccesoViewModel>()
+                .RegisterType<IIngresoDatosViewModel, IngresoDatosViewModel>()
                 .RegisterType<CommunityContext>(new HierarchicalLifetimeManager());
 
             return container;

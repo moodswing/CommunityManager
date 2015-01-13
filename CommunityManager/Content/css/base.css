@@ -47,9 +47,30 @@
 
 .password-icon-input {
     background: white url(/content/img/input-password.png) 7px 5px no-repeat;
+}
+
+.password-icon-login {
+    background: white url(/content/img/input-password.png) 7px 5px no-repeat;
     margin-bottom: 5px;
 }
 
+.number-icon-input {
+    background: white url(/content/img/input-number.png) 7px 5px no-repeat;
+}
+
+.question-icon-input {
+    background: white url(/content/img/input-question.png) 7px 5px no-repeat;
+}
+
+.password-icon-login.input-validation-error,
 .password-icon-input.input-validation-error {
     background: white url(/content/img/input-error-password.png) 7px 5px no-repeat;
+}
+
+.number-icon-input.input-validation-error {
+    background: white url(/content/img/input-error-number.png) 7px 5px no-repeat;
+}
+
+.question-icon-input.input-validation-error {
+    background: white url(/content/img/input-error-question.png) 7px 5px no-repeat;
 }

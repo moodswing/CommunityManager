@@ -153,9 +153,13 @@
     <Content Include="Content\img\compartir-ico.png" />
     <Content Include="Content\img\ingreso-ico.png" />
     <Content Include="Content\img\input-error-mail.png" />
+    <Content Include="Content\img\input-error-number.png" />
     <Content Include="Content\img\input-error-password.png" />
+    <Content Include="Content\img\input-error-question.png" />
     <Content Include="Content\img\input-mail.png" />
+    <Content Include="Content\img\input-number.png" />
     <Content Include="Content\img\input-password.png" />
+    <Content Include="Content\img\input-question.png" />
     <Content Include="Content\img\publica-ico.png" />
     <Content Include="Content\css\loading.css" />
     <Content Include="Content\Site.css" />
@@ -194,6 +198,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Extensions\HtmlExtensions.cs" />
     <Compile Include="Migrations\201501081719170_InitialCreate.cs" />
     <Compile Include="Migrations\201501081719170_InitialCreate.Designer.cs">
       <DependentUpon>201501081719170_InitialCreate.cs</DependentUpon>
@@ -210,6 +215,14 @@
     <Compile Include="Migrations\201501091947314_InitialCreate4.Designer.cs">
       <DependentUpon>201501091947314_InitialCreate4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201501121931496_InitialCreate5.cs" />
+    <Compile Include="Migrations\201501121931496_InitialCreate5.Designer.cs">
+      <DependentUpon>201501121931496_InitialCreate5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501122028269_InitialCreate6.cs" />
+    <Compile Include="Migrations\201501122028269_InitialCreate6.Designer.cs">
+      <DependentUpon>201501122028269_InitialCreate6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -218,6 +231,7 @@
     <Compile Include="Services\UsuarioService.cs" />
     <Compile Include="Services\WebSecurityService.cs" />
     <Compile Include="ViewModels\Acceso\AccesoViewModel.cs" />
+    <Compile Include="ViewModels\Acceso\IngresoDatosViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -249,6 +263,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201501091947314_InitialCreate4.resx">
       <DependentUpon>201501091947314_InitialCreate4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501121931496_InitialCreate5.resx">
+      <DependentUpon>201501121931496_InitialCreate5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501122028269_InitialCreate6.resx">
+      <DependentUpon>201501122028269_InitialCreate6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -17,7 +17,6 @@
                 //if (data.result == "Redirect") window.location = data.url;
                 else {
                     var loginBox = $(loginBoxSelector);
-                    form.remove();
                     loginBox.html(data);
                     setDocumentEvents();
                     $(loadingLoginSelector).hide();

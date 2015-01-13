@@ -20,10 +20,8 @@ namespace CommunityManager.Migrations
 
         protected override void Seed(CommunityContext context)
         {
-            //context.Usuarios.AddOrUpdate(p => p.Email,
-            //                new Usuario { Email = "rob.arav@gmail.com", Password = "12345" },
-            //                new Usuario { Email = "test@gmail.com", Password = "12345" },
-            //                new Usuario { Email = "raravena@gmail.com", Password = "12345" });
+            context.Usuarios.AddOrUpdate(p => p.Email,
+                            new Usuario { Email = "rob.arav@gmail.com", NumeroVivienda = "1706", EstadoUsuario = EstadoUsuario.Inactivo });
 
             WebSecurity.InitializeDatabaseConnection("CommunityContext", "Usuarios", "Id", "Email", true);
 

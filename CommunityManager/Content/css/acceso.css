@@ -78,7 +78,7 @@
     background-color: rgba(210,210,210,0.68);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
     padding: 20px;
-    color: #484642;
+    color: #242323;
 }
 
 .login-box .login-box-header {
@@ -137,4 +137,14 @@
     font-size: 12px;
     color: #975755;
     padding-bottom: 7px;
+}
+
+.field-info-description {
+    display: block;
+    font-size: 12px;
+    width: 230px;
+    padding-bottom: 12px;
+    text-align: justify;
+    padding-top: 10px;
+    border-top: 1px solid gray;
 }

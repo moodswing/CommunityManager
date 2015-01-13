@@ -8,5 +8,6 @@ namespace CommunityManager.Services
     public interface IServiceBase<T>
     {
         List<T> Todos();
+        T ObtenerPorId(int id);
     }
 }
