@@ -8,6 +8,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using CommunityManager.App_Start;
 using CommunityManager.DataAccessLayer;
+using CommunityManager.Infrastructure;
 using Microsoft.Practices.Unity;
 
 namespace CommunityManager
@@ -26,6 +27,7 @@ namespace CommunityManager
 
             //Database.SetInitializer(new DataInitializer());
 
+            Bootstrapper.RegisterMappings();
             _container = Bootstrapper.ConfigureUnityContainer();
             MvcConfig.Register(_container, _unityGuid);
 

@@ -148,3 +148,12 @@
     padding-top: 10px;
     border-top: 1px solid gray;
 }
+
+.field-validation-error {
+    display: block;
+    font-size: 12px;
+    width: 230px;
+    padding-bottom: 12px;
+    color: #975755;
+    margin-top: -7px;
+}

@@ -19,24 +19,25 @@
         },
         validateForm = function (validate) {
             var isValid = true;
-            var errorsAlreadyDisplayed = $(".field-validation-error:visible");
 
             validate.each(function () {
-                if ($(this).is("[type=checkbox]")) return;
-                if (!$(this).valid()) isValid = false;
+                var input = $(this);
+                if (input.is("[type=checkbox]")) return;
+                if (!input.valid()) {
+                    isValid = false;
+                    var form = input.parents("form").first();
+
+                    var requiredError;
+                    for (var i = 0; i < form.validate().errorList.length; i++) {
+                        var error = form.validate().errorList[i];
+                        if (error.element == input[0] && error.message.indexOf("required") > -1)
+                            requiredError = true;
+                    }
+                    
+                    if (requiredError) input.next(".field-validation-error").hide();
+                    else input.next(".field-validation-error").show();
+                }
             });
-
-            if (isValid)
-                $(".field-info-description").show();
-            else {
-                var errors = $(".field-validation-error:visible");
-
-                $(".register-studio-form .value").not(errors.parents(".value")).find(".field-info-description:hidden").show('slide', { direction: 'left' }, 350);
-                errors.parents(".value").find(".field-info-description").hide();
-
-                errors.not(errorsAlreadyDisplayed).hide();
-                errors.not(errorsAlreadyDisplayed).show('slide', { direction: 'left' }, 350);
-            }
 
             return isValid;
         },

@@ -32,6 +32,8 @@ namespace CommunityManager.ViewModels.Acceso
         [Required]
         [Display(Description = "Para evitar filtraciones o suplantaciones debes validar que tu correo está asignado al número de vivienda correcto")]
         public string NumeroVivienda { get; set; }
+
+        public string UserName { get; set; }
     }
 
     public interface IIngresoDatosViewModel
@@ -42,5 +44,6 @@ namespace CommunityManager.ViewModels.Acceso
         string Password { get; set; }
         string ConfirmarPassword { get; set; }
         string NumeroVivienda { get; set; }
+        string UserName { get; set; }
     }
 }

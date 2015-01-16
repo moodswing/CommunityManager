@@ -1,8 +1,9 @@
 ﻿@using CommunityManager.Infrastructure.Extensions
 @model CommunityManager.ViewModels.Acceso.IngresoDatosViewModel
 
-<form id="LoginForm" method="post" action="@Url.Action("Acceso", "IngresarDatos")">
+<form id="EnterDataForm">
     <div class="login-box-header">Ingresa tus datos</div>
+    @Html.HiddenFor(u => u.UserName)
     <div>
         @Html.TextBoxFor(u => u.Nombre, new { @class = "icon-input w200px question-icon-input", placeholder = "nombre" })
     </div>
@@ -16,14 +17,17 @@
     <div>
         @Html.DescriptionFor(u => u.Password)
         @Html.PasswordFor(u => u.Password, new { @class = "icon-input password-icon-input w200px", placeholder = "nuevo password" })
+        @Html.ValidationMessageFor(u => u.Password)
     </div>
     <div>
         @Html.PasswordFor(u => u.ConfirmarPassword, new { @class = "icon-input password-icon-input w200px", placeholder = "confirmar nuevo password" })
+        @Html.ValidationMessageFor(u => u.ConfirmarPassword)
     </div>
     <div>
         @Html.DescriptionFor(u => u.NumeroVivienda)
         @Html.TextBoxFor(u => u.NumeroVivienda, new { @class = "icon-input w200px number-icon-input", placeholder = "número de departamento" })
+        @Html.ValidationMessageFor(u => u.NumeroVivienda)
     </div>
     @Html.ValidationSummary(true)
-    <div><input type="submit" id="LoginButton" class="login-button w200px" value="acceder" /></div>
+    <div><a id="EnterDataButton" class="login-button w200px">acceder</a></div>
 </form>

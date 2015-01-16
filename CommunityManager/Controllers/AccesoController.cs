@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using CommunityManager.Models;
 using CommunityManager.Services;
 using CommunityManager.ViewModels.Acceso;
@@ -31,7 +32,10 @@ namespace CommunityManager.Controllers
             if (!WebSecurity.Initialized)
                 WebSecurity.InitializeDatabaseConnection("CommunityContext", "Usuarios", "Id", "Email", autoCreateTables: true);
 
-            return View();
+            AccesoViewModel.Recordarme = true;
+            AccesoViewModel.Email = "rob.arav@gmail.com";
+
+            return View(AccesoViewModel);
         }
 
         [HttpPost]
@@ -44,16 +48,24 @@ namespace CommunityManager.Controllers
                 {
                     var user = UsuarioService.ObtenerPorId(WebSecurity.GetUserId(usuario.Email));
                     if (user.EstadoUsuario == EstadoUsuario.Inactivo)
+                    {
+                        IngresoDatosViewModel.UserName = usuario.Email;
+                        IngresoDatosViewModel.NumeroVivienda = "1706";
+                        IngresoDatosViewModel.Nombre = "Robinson";
+                        IngresoDatosViewModel.Apellido = "Aravena";
+                        IngresoDatosViewModel.NombreUsuario = "Robinson Aravena";
+
                         return PartialView("Partial/_Configuration", IngresoDatosViewModel);
-                        
-                    return Json(new { result = "Redirect", url = Url.Action("Portada", "Inicio") });
+                    }
+
+                    return Json(new { result = "Redirect", url = Url.Action("Inicio", "Portada") });
                 }
 
                 ModelState.AddModelError("", "Correo o contraseña incorrectos");
                 return PartialView("Partial/_LoginBox", AccesoViewModel);
             }
 
-            return Json(new { result = "Redirect", url = Url.Action("Acceso", "Acceso") });
+            return Json(new { result = "Redirect", url = Url.Action("Index", "Error") });
         }
 
 
@@ -63,9 +75,20 @@ namespace CommunityManager.Controllers
         {
             if (ModelState.IsValid)
             {
+                var user = UsuarioService.ObtenerPorId(WebSecurity.GetUserId(datos.UserName));
+                if (user.NumeroVivienda == datos.NumeroVivienda)
+                {
+                    WebSecurity.ChangePassword(datos.UserName, "12345", datos.Password);
+                    user.EstadoUsuario = EstadoUsuario.Activo;
+                    UsuarioService.Actualizar(user, datos);
+                    return Json(new { result = "Redirect", url = Url.Action("Inicio", "Portada") });
+                }
+                
+                ModelState.AddModelError("NumeroVivienda", "El número de vivienda ingresado es incorrecto");
+                return PartialView("Partial/_Configuration", datos);
             }
 
-            return Json(new { result = "Redirect", url = Url.Action("Portada", "Inicio") });
+            return Json(new { result = "Redirect", url = Url.Action("Index", "Error") });
         }
     }
 }
