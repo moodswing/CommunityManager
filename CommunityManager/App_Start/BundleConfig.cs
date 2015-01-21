@@ -12,6 +12,7 @@ namespace CommunityManager.App_Start
                 "~/Content/css/loading.css"));
 
             bundles.Add(new StyleBundle("~/Content/css/acceso").Include("~/Content/css/acceso.css"));
+            bundles.Add(new StyleBundle("~/Content/css/portada").Include("~/Content/css/portada.css"));
             bundles.Add(new StyleBundle("~/Content/css/layout").Include("~/Content/css/layout.css"));
 
             bundles.Add(new ScriptBundle("~/Bundles/js-base").Include("~/Scripts/communityManager.base.js"));

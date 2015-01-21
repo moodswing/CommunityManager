@@ -4,7 +4,7 @@ using CommunityManager.Models;
 
 namespace CommunityManager.ViewModels.Acceso
 {
-    public class AccesoViewModel : IAccesoViewModel
+    public class AccesoViewModel : BaseViewModel, IAccesoViewModel
     {
         [Required(ErrorMessage = "Ingrese nombre de usuario")]
         [Display(Name = "Email")]

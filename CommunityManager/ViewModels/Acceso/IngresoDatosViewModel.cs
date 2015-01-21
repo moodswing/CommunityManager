@@ -6,7 +6,7 @@ using System.Web;
 
 namespace CommunityManager.ViewModels.Acceso
 {
-    public class IngresoDatosViewModel : IIngresoDatosViewModel
+    public class IngresoDatosViewModel : BaseViewModel, IIngresoDatosViewModel
     {
         [Required]
         public string Nombre { get; set; }

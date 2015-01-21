@@ -1,0 +1,18 @@
+﻿@using CommunityManager.Infrastructure.Extensions
+@using CommunityManager.Models
+@model CommunityManager.ViewModels.Portada.ResumenPublicacionViewModel
+
+<div class="container">
+    <div class="post">
+        <div class="title">
+            @Model.Titulo
+        </div>
+        <div class="date">
+            @Model.TipoPublicacion
+            @(Model.TipoPublicacion == TipoPublicacion.Servicio || Model.TipoPublicacion == TipoPublicacion.Reclamo ? " publicado " : " publicada ") el
+            @Model.FechaIngreso.ToString("d 'de'")
+            @Model.FechaIngreso.ToString(" MMMM ").Capitalize()
+            @Model.FechaIngreso.ToString(" 'de' yyyy")
+        </div>
+    </div>
+</div>

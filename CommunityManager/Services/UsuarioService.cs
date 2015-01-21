@@ -26,7 +26,7 @@ namespace CommunityManager.Services
 
         public Usuario ObtenerPorId(int id)
         {
-            return DbContext.Usuarios.FirstOrDefault(u => u.Id == id);
+            return DbContext.Usuarios.FirstOrDefault(u => u.ID == id);
         }
 
         public void Actualizar(Usuario registro, IngresoDatosViewModel viewModel)

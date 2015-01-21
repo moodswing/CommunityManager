@@ -11,14 +11,17 @@ namespace CommunityManager.Models
     [Table("Usuarios")]
     public class Usuario
     {
-        [Key]
-        public int Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ID { get; set; }
         public string Email { get; set; }
         [DataType(DataType.EmailAddress)]
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string NombreUsuario { get; set; }
         public string NumeroVivienda { get; set; }
+
+        public virtual ICollection<Publicacion> Publicaciones { get; set; }
+        //public virtual ICollection<PublicacionVista> PublicacionesVistas { get; set; }
 
         public EstadoUsuario EstadoUsuario { get; set; }
     }

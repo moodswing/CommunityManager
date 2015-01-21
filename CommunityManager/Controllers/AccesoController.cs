@@ -68,8 +68,6 @@ namespace CommunityManager.Controllers
             return Json(new { result = "Redirect", url = Url.Action("Index", "Error") });
         }
 
-
-
         [HttpPost]
         public ActionResult IngresarDatos(IngresoDatosViewModel datos)
         {

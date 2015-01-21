@@ -7,13 +7,13 @@ namespace CommunityManager.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.2-31219")]
-    public sealed partial class InitialCreate2 : IMigrationMetadata
+    public sealed partial class Migration1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Migration1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201501081722578_InitialCreate2"; }
+            get { return "201501211544248_Migration1"; }
         }
         
         string IMigrationMetadata.Source

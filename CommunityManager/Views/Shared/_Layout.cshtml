@@ -1,10 +1,14 @@
-﻿@using System.Web.Optimization
+﻿@model CommunityManager.ViewModels.BaseViewModel
+
+@using System.Web.Optimization
+@using CommunityManager.Models
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portada Doña Ines</title>
+    @Styles.Render("~/Content/css/base")
     @Styles.Render("~/Content/css/layout")
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300' rel='stylesheet' type='text/css'>
@@ -17,6 +21,42 @@
                 Rob Aravena
             </div>
             <div class="sub-user-name">1706</div>
+            <div class="sections">
+                <ul>
+                    <a href="@Url.Action("PublicacionesPorTipo", "Portada", new { tipo = (int)TipoPublicacion.Todo })">
+                        <li class="icon-todo @(Model.FiltrarPublicacionesPor == TipoPublicacion.Todo ? "section-selected" : "")">Todas las publicaciones</li>
+                    </a>
+                    <a href="@Url.Action("PublicacionesPorTipo", "Portada", new { tipo = (int)TipoPublicacion.Vista })">
+                        <li class="icon-vistas @(Model.FiltrarPublicacionesPor == TipoPublicacion.Vista ? "section-selected" : "")">Vistas recientemente</li>
+                    </a>
+                    <a href="@Url.Action("PublicacionesPorTipo", "Portada", new { tipo = (int)TipoPublicacion.Siguiendo })">
+                        <li class="icon-seguir @(Model.FiltrarPublicacionesPor == TipoPublicacion.Siguiendo ? "section-selected" : "")">En seguimiento</li>
+                    </a>
+                    <a href="@Url.Action("PublicacionesPorTipo", "Portada", new { tipo = (int)TipoPublicacion.Propuesta })">
+                        <li class="icon-propuestas @(Model.FiltrarPublicacionesPor == TipoPublicacion.Propuesta ? "section-selected" : "")">Propuestas</li>
+                    </a>
+                    <a href="@Url.Action("PublicacionesPorTipo", "Portada", new { tipo = (int)TipoPublicacion.Encuesta })">
+                        <li class="icon-encuestas @(Model.FiltrarPublicacionesPor == TipoPublicacion.Encuesta ? "section-selected" : "")">Encuestas</li>
+                    </a>
+                    <a href="@Url.Action("PublicacionesPorTipo", "Portada", new { tipo = (int)TipoPublicacion.Servicio })">
+                        <li class="icon-servicios @(Model.FiltrarPublicacionesPor == TipoPublicacion.Servicio ? "section-selected" : "")">Servicios</li>
+                    </a>
+                    <a href="@Url.Action("PublicacionesPorTipo", "Portada", new { tipo = (int)TipoPublicacion.Venta })">
+                        <li class="icon-ventas @(Model.FiltrarPublicacionesPor == TipoPublicacion.Venta ? "section-selected" : "")">Ventas</li>
+                    </a>
+                    <a href="@Url.Action("PublicacionesPorTipo", "Portada", new { tipo = (int)TipoPublicacion.Reclamo })">
+                        <li class="icon-reclamos @(Model.FiltrarPublicacionesPor == TipoPublicacion.Reclamo ? "section-selected" : "")">Reclamos</li>
+                    </a>
+                </ul>
+                <ul class="bottom-section">
+                    <a href="@Url.Action("PublicacionesPorTipo", "Portada", new { tipo = (int)TipoPublicacion.Administracion })">
+                        <li class="icon-administracion @(Model.FiltrarPublicacionesPor == TipoPublicacion.Administracion ? "section-selected" : "")">Info. Administrativa</li>
+                    </a>
+                    <a href="@Url.Action("PublicacionesPorTipo", "Portada", new { tipo = (int)TipoPublicacion.Cuenta })">
+                        <li class="icon-cuenta @(Model.FiltrarPublicacionesPor == TipoPublicacion.Cuenta ? "section-selected" : "")">Tu cuenta</li>
+                    </a>
+                </ul>
+            </div>
         </div>
         @RenderBody()
     </body>

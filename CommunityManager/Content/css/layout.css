@@ -10,11 +10,11 @@
 .left-sidebar {
     background: #373F48;
     color: #98A0A8;
-    float: left;
-    width: 160px;
+    width: 240px;
     height: 100%;
-    padding: 20px;
+    padding: 0;
     text-align: center;
+    position: fixed;
 }
 
 .left-sidebar .avatar {
@@ -24,6 +24,7 @@
     margin-bottom: 20px;
     border-radius: 50%;
     border: 2px solid #636E7D;
+    margin-top: 20px;
 }
 
 .left-sidebar .user-name {
@@ -31,4 +32,47 @@
     text-transform: uppercase;
     font-family: 'Open Sans Condensed', sans-serif;
     color: #B1B7BD;
+}
+
+.sections {
+    padding-top: 20px;
+}
+
+.sections ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    margin: 0;
+}
+
+.sections ul a {
+    text-decoration: none;
+}
+
+.sections li {
+    padding: 13px 0 13px 70px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Open Sans Condensed', Sans Serif;
+    color: #B1B7BD;
+}
+
+.sections li:hover {
+    cursor: pointer;
+}
+
+.sections li:hover,
+.sections li.section-selected {
+    background-color: #4A525A;
+    color: #E8E7E8;
+}
+
+.sections .bottom-section {
+    position: absolute;
+    bottom: 15px;
+    width: 170px;
+}
+
+.sections .bottom-section li {
+    width: 170px;
 }

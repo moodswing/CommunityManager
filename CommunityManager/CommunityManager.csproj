@@ -155,6 +155,17 @@
     <Content Include="Content\img\acceso-bg.jpg" />
     <Content Include="Content\img\avatar.png" />
     <Content Include="Content\img\compartir-ico.png" />
+    <Content Include="Content\img\ico-administracion.png" />
+    <Content Include="Content\img\ico-buscar.png" />
+    <Content Include="Content\img\ico-cuenta.png" />
+    <Content Include="Content\img\ico-encuestas.png" />
+    <Content Include="Content\img\ico-propuestas.png" />
+    <Content Include="Content\img\ico-reclamos.png" />
+    <Content Include="Content\img\ico-seguir.png" />
+    <Content Include="Content\img\ico-servicios.png" />
+    <Content Include="Content\img\ico-todo.png" />
+    <Content Include="Content\img\ico-ventas.png" />
+    <Content Include="Content\img\ico-vistas.png" />
     <Content Include="Content\img\ingreso-ico.png" />
     <Content Include="Content\img\input-error-mail.png" />
     <Content Include="Content\img\input-error-number.png" />
@@ -199,6 +210,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Content\css\portada.css" />
     <Compile Include="Controllers\AccesoController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\PortadaController.cs" />
@@ -210,43 +222,42 @@
     <Compile Include="Infrastructure\AutoMapperConfiguration.cs" />
     <Compile Include="Infrastructure\Bootstrapper.cs" />
     <Compile Include="Infrastructure\Extensions\HtmlExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\ObjectExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\StringExtensions.cs" />
     <Compile Include="Infrastructure\MappingProfiles\AccesoMappingProfiles.cs" />
+    <Compile Include="Infrastructure\MappingProfiles\PublicacionMappingProfiles.cs" />
     <Compile Include="Infrastructure\MvcConfig.cs" />
     <Compile Include="Infrastructure\SimpleMembershipMvc3.cs" />
     <Compile Include="Infrastructure\UnityControllerActivator.cs" />
-    <Compile Include="Migrations\201501081719170_InitialCreate.cs" />
-    <Compile Include="Migrations\201501081719170_InitialCreate.Designer.cs">
-      <DependentUpon>201501081719170_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201501211528059_Migration.cs" />
+    <Compile Include="Migrations\201501211528059_Migration.Designer.cs">
+      <DependentUpon>201501211528059_Migration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201501081722578_InitialCreate2.cs" />
-    <Compile Include="Migrations\201501081722578_InitialCreate2.Designer.cs">
-      <DependentUpon>201501081722578_InitialCreate2.cs</DependentUpon>
+    <Compile Include="Migrations\201501211544248_Migration1.cs" />
+    <Compile Include="Migrations\201501211544248_Migration1.Designer.cs">
+      <DependentUpon>201501211544248_Migration1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201501081723599_InitialCreate3.cs" />
-    <Compile Include="Migrations\201501081723599_InitialCreate3.Designer.cs">
-      <DependentUpon>201501081723599_InitialCreate3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201501091947314_InitialCreate4.cs" />
-    <Compile Include="Migrations\201501091947314_InitialCreate4.Designer.cs">
-      <DependentUpon>201501091947314_InitialCreate4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201501121931496_InitialCreate5.cs" />
-    <Compile Include="Migrations\201501121931496_InitialCreate5.Designer.cs">
-      <DependentUpon>201501121931496_InitialCreate5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201501122028269_InitialCreate6.cs" />
-    <Compile Include="Migrations\201501122028269_InitialCreate6.Designer.cs">
-      <DependentUpon>201501122028269_InitialCreate6.cs</DependentUpon>
+    <Compile Include="Migrations\201501211919018_Migration3.cs" />
+    <Compile Include="Migrations\201501211919018_Migration3.Designer.cs">
+      <DependentUpon>201501211919018_Migration3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\PublicacionSeguida.cs" />
+    <Compile Include="Models\Publicacion.cs" />
+    <Compile Include="Models\PublicacionVista.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IServiceBase.cs" />
     <Compile Include="Services\IWebSecurityService.cs" />
+    <Compile Include="Services\PublicacionService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
     <Compile Include="Services\WebSecurityService.cs" />
     <Compile Include="ViewModels\Acceso\AccesoViewModel.cs" />
     <Compile Include="ViewModels\Acceso\IngresoDatosViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Portada\PortadaViewModel.cs" />
+    <Compile Include="ViewModels\Portada\PublicacionViewModel.cs" />
+    <Compile Include="ViewModels\Portada\ResumenPublicacionViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -258,6 +269,7 @@
     <Content Include="Views\Acceso\Partial\_LoginBox.cshtml" />
     <Content Include="Views\Portada\Inicio.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Portada\Partial\_Publicacion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -269,23 +281,14 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201501081719170_InitialCreate.resx">
-      <DependentUpon>201501081719170_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201501211528059_Migration.resx">
+      <DependentUpon>201501211528059_Migration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201501081722578_InitialCreate2.resx">
-      <DependentUpon>201501081722578_InitialCreate2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201501211544248_Migration1.resx">
+      <DependentUpon>201501211544248_Migration1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201501081723599_InitialCreate3.resx">
-      <DependentUpon>201501081723599_InitialCreate3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201501091947314_InitialCreate4.resx">
-      <DependentUpon>201501091947314_InitialCreate4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201501121931496_InitialCreate5.resx">
-      <DependentUpon>201501121931496_InitialCreate5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201501122028269_InitialCreate6.resx">
-      <DependentUpon>201501122028269_InitialCreate6.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201501211919018_Migration3.resx">
+      <DependentUpon>201501211919018_Migration3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
