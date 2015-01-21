@@ -47,6 +47,9 @@
                     <a href="@Url.Action("PublicacionesPorTipo", "Portada", new { tipo = (int)TipoPublicacion.Reclamo })">
                         <li class="icon-reclamos @(Model.FiltrarPublicacionesPor == TipoPublicacion.Reclamo ? "section-selected" : "")">Reclamos</li>
                     </a>
+                    <a href="@Url.Action("PublicacionesPorTipo", "Portada", new { tipo = (int)TipoPublicacion.Regalo })">
+                        <li class="icon-reclamos @(Model.FiltrarPublicacionesPor == TipoPublicacion.Regalo ? "section-selected" : "")">Regalos</li>
+                    </a>
                 </ul>
                 <ul class="bottom-section">
                     <a href="@Url.Action("PublicacionesPorTipo", "Portada", new { tipo = (int)TipoPublicacion.Administracion })">

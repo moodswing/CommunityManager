@@ -9,7 +9,7 @@
         </div>
         <div class="date">
             @Model.TipoPublicacion
-            @(Model.TipoPublicacion == TipoPublicacion.Servicio || Model.TipoPublicacion == TipoPublicacion.Reclamo ? " publicado " : " publicada ") el
+            @(Model.TipoPublicacion == TipoPublicacion.Servicio || Model.TipoPublicacion == TipoPublicacion.Reclamo  || Model.TipoPublicacion == TipoPublicacion.Regalo ? " publicado " : " publicada ") el
             @Model.FechaIngreso.ToString("d 'de'")
             @Model.FechaIngreso.ToString(" MMMM ").Capitalize()
             @Model.FechaIngreso.ToString(" 'de' yyyy")
