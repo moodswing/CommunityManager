@@ -76,43 +76,47 @@
 }
 
 .icon-todo {
-    background: url(/content/img/ico-todo.png) 27px 10px no-repeat;
+    background: url(/content/img/ico-todo.png) 27px 7px no-repeat;
 }
 
 .icon-vistas {
-    background: url(/content/img/ico-vistas.png) 27px 10px no-repeat;
+    background: url(/content/img/ico-vistas.png) 27px 7px no-repeat;
 }
 
 .icon-seguir {
-    background: url(/content/img/ico-seguir.png) 27px 10px no-repeat;
+    background: url(/content/img/ico-seguir.png) 27px 7px no-repeat;
 }
 
 .icon-propuestas {
-    background: url(/content/img/ico-propuestas.png) 27px 10px no-repeat;
+    background: url(/content/img/ico-propuestas.png) 27px 7px no-repeat;
 }
 
 .icon-encuestas {
-    background: url(/content/img/ico-encuestas.png) 27px 10px no-repeat;
+    background: url(/content/img/ico-encuestas.png) 27px 7px no-repeat;
 }
 
 .icon-servicios {
-    background: url(/content/img/ico-servicios.png) 27px 10px no-repeat;
+    background: url(/content/img/ico-servicios.png) 27px 7px no-repeat;
 }
 
 .icon-ventas {
-    background: url(/content/img/ico-ventas.png) 27px 10px no-repeat;
+    background: url(/content/img/ico-ventas.png) 27px 7px no-repeat;
+}
+
+.icon-regalos {
+    background: url(/content/img/ico-regalos.png) 27px 7px no-repeat;
 }
 
 .icon-reclamos {
-    background: url(/content/img/ico-reclamos.png) 27px 10px no-repeat;
+    background: url(/content/img/ico-reclamos.png) 27px 7px no-repeat;
 }
 
 .icon-cuenta {
-    background: url(/content/img/ico-cuenta.png) 27px 10px no-repeat;
+    background: url(/content/img/ico-cuenta.png) 27px 7px no-repeat;
 }
 
 .icon-administracion {
-    background: url(/content/img/ico-administracion.png) 27px 10px no-repeat;
+    background: url(/content/img/ico-administracion.png) 27px 7px no-repeat;
 }
 
 .icon-buscar {

@@ -1,18 +1,23 @@
 ﻿@using CommunityManager.Infrastructure.Extensions
 @using CommunityManager.Models
-@model CommunityManager.ViewModels.Portada.ResumenPublicacionViewModel
+@model CommunityManager.ViewModels.Portada.PublicacionViewModel
 
-<div class="container">
-    <div class="post">
-        <div class="title">
-            @Model.Titulo
-        </div>
-        <div class="date">
-            @Model.TipoPublicacion
-            @(Model.TipoPublicacion == TipoPublicacion.Servicio || Model.TipoPublicacion == TipoPublicacion.Reclamo  || Model.TipoPublicacion == TipoPublicacion.Regalo ? " publicado " : " publicada ") el
-            @Model.FechaIngreso.ToString("d 'de'")
-            @Model.FechaIngreso.ToString(" MMMM ").Capitalize()
-            @Model.FechaIngreso.ToString(" 'de' yyyy")
-        </div>
+<div class="title">
+    @Model.Titulo
+</div>
+<div class="sub-container">
+    <div class="sub-title">
+        @Model.TipoPublicacion
+        @if (Model.TipoPublicacion == TipoPublicacion.Administracion)
+        {
+            @:Mensaje administrativo 
+        }
+        publicad@(Model.TipoPublicacion.ToString().Last()) el
+        @Model.FechaIngreso.ToString("d 'de'")
+        @Model.FechaIngreso.ToString(" MMMM ").Capitalize()
+        @Model.FechaIngreso.ToString(" 'de' yyyy")
+    </div>
+    <div class="description">
+        @Model.Descripcion
     </div>
 </div>

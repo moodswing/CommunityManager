@@ -10,6 +10,7 @@ namespace CommunityManager.ViewModels.Portada
     {
         public string TituloPagina { get; set; }
         public List<IResumenPublicacionViewModel> Publicaciones { get; set; }
+        public IPublicacionViewModel PublicacionInicial { get; set; }
 
         public PortadaViewModel()
         {
@@ -22,5 +23,6 @@ namespace CommunityManager.ViewModels.Portada
         string TituloPagina { get; set; }
         TipoPublicacion FiltrarPublicacionesPor { get; set; }
         List<IResumenPublicacionViewModel> Publicaciones { get; set; }
+        IPublicacionViewModel PublicacionInicial { get; set; }
     }
 }

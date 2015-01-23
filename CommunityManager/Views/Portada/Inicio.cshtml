@@ -4,12 +4,30 @@
     Layout = "../Shared/_Layout.cshtml";
 }
 @Styles.Render("~/Content/css/portada")
+@Styles.Render("~/Content/css/jscrollpane")
+@Scripts.Render("~/Bundles/jscrollpane")
+@Scripts.Render("~/Bundles/portada")
+@Scripts.Render("~/Bundles/js-base")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        CommunityManagerPortada().Init();
+    });
+</script>
 
 <div class="summary-posts">
     <div class="search-post icon-buscar">Buscar Publicaciones</div>
     <div class="header">@Model.TituloPagina</div>
     @foreach (var publicacion in Model.Publicaciones)
     {
-        @Html.Partial("Partial/_Publicacion", publicacion)
+        @Html.Partial("Partial/_ResumenPublicacion", publicacion)
+    }
+</div>
+
+<div id="LoadingPublication" style="display: none;"></div>
+<div class="post-container">
+    @if (Model.PublicacionInicial != null)
+    {
+        @Html.Partial("Partial/_Publicacion", Model.PublicacionInicial)
     }
 </div>

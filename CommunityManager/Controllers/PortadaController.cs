@@ -35,6 +35,7 @@ namespace CommunityManager.Controllers
             Thread.CurrentThread.CurrentCulture = new CultureInfo("es-ES");
 
             PortadaViewModel.Publicaciones = PublicacionService.ListaResumen();
+            PortadaViewModel.PublicacionInicial = PublicacionService.PublicacionCompleta(PortadaViewModel.Publicaciones.FirstOrDefault());
             PortadaViewModel.TituloPagina = "Publicaciones recientes";
             PortadaViewModel.FiltrarPublicacionesPor = TipoPublicacion.Todo;
             
@@ -75,7 +76,15 @@ namespace CommunityManager.Controllers
                     break;
             }
 
+            PortadaViewModel.PublicacionInicial = PublicacionService.PublicacionCompleta(PortadaViewModel.Publicaciones.FirstOrDefault());
             return View("Inicio", PortadaViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult CargarPublicacion(int id)
+        {
+            var publicacionVm = PublicacionService.PublicacionCompleta(id);
+            return PartialView("Partial/_Publicacion", publicacionVm);
         }
     }
 }

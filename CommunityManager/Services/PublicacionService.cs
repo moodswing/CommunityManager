@@ -15,6 +15,8 @@ namespace CommunityManager.Services
         List<IResumenPublicacionViewModel> ListaResumen();
         List<IResumenPublicacionViewModel> ListaResumenVistasRecientes(int idUsuario);
         List<IResumenPublicacionViewModel> ListaResumenSeguidas(int idUsuario);
+        IPublicacionViewModel PublicacionCompleta(IResumenPublicacionViewModel resumenPublicacion);
+        IPublicacionViewModel PublicacionCompleta(int id);
     }
 
     public class PublicacionService : IPublicacionService
@@ -34,7 +36,7 @@ namespace CommunityManager.Services
 
         public List<IResumenPublicacionViewModel> ListaResumen()
         {
-            var publicaciones = DbContext.Publicaciones.ToList();
+            var publicaciones = DbContext.Publicaciones.OrderByDescending(p => p.FechaIngreso).ToList();
             return ObtenerListaResumen(publicaciones);
         }
 
@@ -48,6 +50,24 @@ namespace CommunityManager.Services
         {
             var publicaciones = DbContext.PublicacionesSeguidas.Where(p => p.UsuarioID == idUsuario).OrderByDescending(v => v.Fecha).Select(p => p.Publicacion).DistinctBy(p => p.ID).ToList();
             return ObtenerListaResumen(publicaciones);
+        }
+
+        public IPublicacionViewModel PublicacionCompleta(IResumenPublicacionViewModel resumenPublicacion)
+        {
+            if (resumenPublicacion == null) return null;
+
+            var publicacion = DbContext.Publicaciones.FirstOrDefault(p => p.ID == resumenPublicacion.Id);
+            var publicacionVm = new PublicacionViewModel();
+            Mapper.Map(publicacion, publicacionVm);
+            return publicacionVm;
+        }
+
+        public IPublicacionViewModel PublicacionCompleta(int id)
+        {
+            var publicacion = DbContext.Publicaciones.FirstOrDefault(p => p.ID == id);
+            var publicacionVm = new PublicacionViewModel();
+            Mapper.Map(publicacion, publicacionVm);
+            return publicacionVm;
         }
 
         private List<IResumenPublicacionViewModel> ObtenerListaResumen(List<Publicacion> publicaciones)

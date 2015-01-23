@@ -32,6 +32,9 @@ namespace CommunityManager.Controllers
             if (!WebSecurity.Initialized)
                 WebSecurity.InitializeDatabaseConnection("CommunityContext", "Usuarios", "Id", "Email", autoCreateTables: true);
 
+            if (WebSecurity.IsAuthenticated)
+                return RedirectToAction("Inicio", "Portada");
+
             AccesoViewModel.Recordarme = true;
             AccesoViewModel.Email = "rob.arav@gmail.com";
 

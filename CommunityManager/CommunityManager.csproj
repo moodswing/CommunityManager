@@ -151,6 +151,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\acceso.css" />
     <Content Include="Content\css\base.css" />
+    <Content Include="Content\css\jquery.jscrollpane.css" />
     <Content Include="Content\css\layout.css" />
     <Content Include="Content\img\acceso-bg.jpg" />
     <Content Include="Content\img\avatar.png" />
@@ -161,6 +162,7 @@
     <Content Include="Content\img\ico-encuestas.png" />
     <Content Include="Content\img\ico-propuestas.png" />
     <Content Include="Content\img\ico-reclamos.png" />
+    <Content Include="Content\img\ico-regalos.png" />
     <Content Include="Content\img\ico-seguir.png" />
     <Content Include="Content\img\ico-servicios.png" />
     <Content Include="Content\img\ico-todo.png" />
@@ -192,16 +194,20 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\communityManager.acceso.js" />
     <Content Include="Scripts\communityManager.base.js" />
+    <Content Include="Scripts\communityManager.portada.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />
     <Content Include="Scripts\jquery-2.1.3.min.map" />
     <Content Include="Scripts\jquery.backstretch.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.jscrollpane.min.js" />
+    <Content Include="Scripts\jquery.mousewheel.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\mwheelIntent.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -269,6 +275,7 @@
     <Content Include="Views\Acceso\Partial\_LoginBox.cshtml" />
     <Content Include="Views\Portada\Inicio.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Portada\Partial\_ResumenPublicacion.cshtml" />
     <Content Include="Views\Portada\Partial\_Publicacion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

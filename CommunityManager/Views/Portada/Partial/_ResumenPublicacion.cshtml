@@ -1,0 +1,23 @@
+﻿@using CommunityManager.Infrastructure.Extensions
+@using CommunityManager.Models
+@model CommunityManager.ViewModels.Portada.ResumenPublicacionViewModel
+
+<div class="container">
+    <div class="post">
+        <div class="title">
+            @Model.Titulo
+        </div>
+        <div class="date">
+            @Model.TipoPublicacion
+            @if (Model.TipoPublicacion == TipoPublicacion.Administracion)
+            {
+                @:Mensaje administrativo 
+            }
+            publicad@(Model.TipoPublicacion.ToString().Last()) el
+            @Model.FechaIngreso.ToString("d 'de'")
+            @Model.FechaIngreso.ToString(" MMMM ").Capitalize()
+            @Model.FechaIngreso.ToString(" 'de' yyyy")
+        </div>
+        @Html.HiddenFor(p => p.Id)
+    </div>
+</div>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using CommunityManager.Models;
 
 namespace CommunityManager.ViewModels.Portada
 {
@@ -13,6 +14,7 @@ namespace CommunityManager.ViewModels.Portada
         public DateTime FechaIngreso { get; set; }
         public int VotosPositivos { get; set; }
         public int VotosNegativos { get; set; }
+        public TipoPublicacion TipoPublicacion { get; set; }
     }
 
     public interface IPublicacionViewModel
@@ -23,5 +25,6 @@ namespace CommunityManager.ViewModels.Portada
         DateTime FechaIngreso { get; set; }
         int VotosPositivos { get; set; }
         int VotosNegativos { get; set; }
+        TipoPublicacion TipoPublicacion { get; set; }
     }
 }
