@@ -6,12 +6,15 @@
     @Model.Titulo
 </div>
 <div class="options">
-    <div class="publication-option ico-favor">
-        A favor
-    </div>
-    <div class="publication-option ico-contra">
-        En contra
-    </div>
+    @if (Model.TipoPublicacion == TipoPublicacion.Propuesta || Model.TipoPublicacion == TipoPublicacion.Reclamo)
+    {
+        <div class="publication-option ico-favor">
+            A favor
+        </div>
+        <div class="publication-option ico-contra">
+            En contra
+        </div>
+    }
     <div class="publication-option ico-seguimiento">
         Seguir
     </div>
@@ -27,6 +30,18 @@
         @Model.FechaIngreso.ToString("d 'de'")
         @Model.FechaIngreso.ToString(" MMMM ").Capitalize()
         @Model.FechaIngreso.ToString(" 'de' yyyy")
+        <div class="votes">
+            @if (Model.VotosPositivos > 0)
+            {
+                @Model.VotosPositivos
+                <img class="first @(Model.VotosNegativos == 0 ? "just-positive" : "")" src="../../../Content/img/ico-good.png" alt="" />    
+            }
+            @if (Model.VotosNegativos > 0)
+            {
+                @Model.VotosNegativos
+                <img src="../../../Content/img/ico-bad.png" alt="" />
+            }
+        </div>
     </div>
     <div class="description">
         @Model.Descripcion

@@ -28,7 +28,8 @@
     color: #85A3A5;
 }
 
-.post .title .votes {
+.post .title .votes,
+.post-container .sub-title .votes {
     float: right;
     display: inline-block;
     font-size: 11px;
@@ -36,11 +37,22 @@
     padding-top: 3px;
 }
 
-.post .title .votes img.first {
+.post-container .sub-title .votes
+{
+    padding-top: 0;
+}
+
+.post .title .votes img.first,
+.post-container .sub-title .votes img.first {
     padding-right: 10px;
 }
 
-.post .title .votes img {
+.post-container .sub-title .votes img.first.just-positive {
+    padding-right: 0;
+}
+
+.post .title .votes img,
+.post-container .sub-title .votes img {
     padding-left: 10px;
 }
 
