@@ -6,6 +6,18 @@
     <div class="post">
         <div class="title">
             @Model.Titulo
+            <div class="votes">
+                @if (Model.VotosPositivos > 0)
+                {
+                    @Model.VotosPositivos
+                    <img class="first" src="../../../Content/img/ico-good.png" alt=""/>    
+                }
+                @if (Model.VotosNegativos > 0)
+                {
+                    @Model.VotosNegativos
+                    <img src="../../../Content/img/ico-bad.png" alt=""/>
+                }  
+            </div>
         </div>
         <div class="date">
             @Model.TipoPublicacion
@@ -17,6 +29,10 @@
             @Model.FechaIngreso.ToString("d 'de'")
             @Model.FechaIngreso.ToString(" MMMM ").Capitalize()
             @Model.FechaIngreso.ToString(" 'de' yyyy")
+            @if (Model.NumeroComentarios > 0)
+            {
+                <div class="comments">@Model.NumeroComentarios comentarios</div>
+            }
         </div>
         @Html.HiddenFor(p => p.Id)
     </div>

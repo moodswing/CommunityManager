@@ -28,6 +28,27 @@
     color: #85A3A5;
 }
 
+.post .title .votes {
+    float: right;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: normal;
+    padding-top: 3px;
+}
+
+.post .title .votes img.first {
+    padding-right: 10px;
+}
+
+.post .title .votes img {
+    padding-left: 10px;
+}
+
+.post .date .comments {
+    float: right;
+    display: inline-block;
+}
+
 .summary-posts .container
 {
     padding: 30px 40px 0 40px;
@@ -76,12 +97,46 @@
 }
 
 .post-container .title {
-    padding: 50px 30px;
+    padding: 50px 30px 24px;
     background-color: rgb(157, 181, 183);
     font-family: 'Open Sans Condensed', Sans-serif;
     font-size: 30px;
     letter-spacing: 1px;
     color: white;
+}
+
+.post-container .options {
+    text-align: right;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    background-color: #9DB5B7;
+    color: white;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.post-container .options .publication-option {
+    display: inline-block;
+    padding-left: 35px;
+    height: 24px;
+    margin-left: 10px;
+    line-height: 24px;
+}
+
+.post-container .options .publication-option:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.post-container .options .ico-favor {
+    background: url(/content/img/ico-favor.png) 7px 0 no-repeat;
+}
+
+.post-container .options .ico-contra {
+    background: url(/content/img/ico-contra.png) 7px 0 no-repeat;
+}
+
+.post-container .options .ico-seguimiento {
+    background: url(/content/img/ico-seguimiento.png) 7px 0 no-repeat;
 }
 
 .post-container .sub-container {
@@ -109,4 +164,49 @@
     padding-bottom: 5px;
     vertical-align: middle;
     display: table-cell;
+}
+
+.post-container .comments-container {
+    padding: 30px;
+    color: #424242;
+}
+
+.post-container .container-header {
+    text-transform: uppercase;
+    border-bottom: 1px solid #E9E9E9;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.post-container .comment {
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #E9E9E9;
+}
+
+.post-container .comment .header .date {
+    display: inline-block;
+    font-size: 11px;
+    color: #ABABAB;
+    padding-left: 5px;
+}
+
+.post-container .comment .content {
+    padding-top: 5px;
+}
+
+.post-container .comment-header {
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+.post-container .comments-container textarea {
+    width: 100%;
+    height: 80px;
+    background-color: #F7F7F7;
+}
+
+.post-container .comments-container .no-comments {
+    text-align: center;
+    padding-bottom: 40px;
 }

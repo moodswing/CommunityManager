@@ -5,6 +5,7 @@
         setDocumentEvents = function() {
             $(listaPublicacionesSelector).jScrollPane();
             $(document).on("click", publicacionSelector, mostrarPublicacion);
+            limpiaUltimoBordeDeComentarios();
         },
         mostrarPublicacion = function() {
             var publicacionId = $(this).find(idPublicacionSelector).val();
@@ -22,6 +23,10 @@
 
             return false;
         },
+        limpiaUltimoBordeDeComentarios = function() {
+            $(comentarioSelector).last().css("border", "none");
+        },
+        comentarioSelector = ".comment",
         listaPublicacionesSelector = ".summary-posts",
         publicacionSelector = ".summary-posts .container",
         idPublicacionSelector = "#Id",

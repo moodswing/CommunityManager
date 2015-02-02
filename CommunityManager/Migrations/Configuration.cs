@@ -21,7 +21,7 @@ namespace CommunityManager.Migrations
         protected override void Seed(CommunityContext context)
         {
             context.Usuarios.AddOrUpdate(p => p.Email,
-                            new Usuario { Email = "rob.arav@gmail.com", NumeroVivienda = "1706", EstadoUsuario = EstadoUsuario.Inactivo });
+                            new Usuario { Email = "rob.arav@gmail.com", NumeroVivienda = "1706", EstadoUsuario = EstadoUsuario.Activo, Nombre = "Robinson", Apellido = "Aravena", NombreUsuario = "Robs" });
 
             context.Publicaciones.AddOrUpdate(p => p.Titulo,
                             new Publicacion { Titulo = "Se regalan cachorros", Descripcion = "Son 5 cachorritos uyuyuyuy", FechaIngreso = DateTime.Now, 
@@ -56,6 +56,17 @@ namespace CommunityManager.Migrations
                             new PublicacionSeguida { Fecha = DateTime.Now, UsuarioID = 5, PublicacionID = 3 },
                             new PublicacionSeguida { Fecha = DateTime.Now, UsuarioID = 5, PublicacionID = 4 },
                             new PublicacionSeguida { Fecha = DateTime.Now, UsuarioID = 5, PublicacionID = 5 });            
+            
+            context.Comentarios.AddOrUpdate(p => p.Texto,
+                            new Comentario { Fecha = DateTime.Now, UsuarioId = 5, PublicacionId = 3, Texto= "Si toda la razón!" },
+                            new Comentario { Fecha = DateTime.Now, UsuarioId = 5, PublicacionId = 4, Texto = "A mi también me pasó :(" },
+                            new Comentario { Fecha = DateTime.Now, UsuarioId = 5, PublicacionId = 4, Texto = "Aprende a escribir" },
+                            new Comentario { Fecha = DateTime.Now, UsuarioId = 5, PublicacionId = 4, Texto = "Deberían echarte" },
+                            new Comentario { Fecha = DateTime.Now, UsuarioId = 5, PublicacionId = 3, Texto = "Muy buena idea" },
+                            new Comentario { Fecha = DateTime.Now, UsuarioId = 5, PublicacionId = 7, Texto = "Aprende a escribiiiir :@" },
+                            new Comentario { Fecha = DateTime.Now, UsuarioId = 5, PublicacionId = 8, Texto = "Guauf" },
+                            new Comentario { Fecha = DateTime.Now, UsuarioId = 5, PublicacionId = 8, Texto = "Miau" },
+                            new Comentario { Fecha = DateTime.Now, UsuarioId = 5, PublicacionId = 5, Texto = "Yo soy mas bacan!" });            
             
             WebSecurity.InitializeDatabaseConnection("CommunityContext", "Usuarios", "Id", "Email", true);
 

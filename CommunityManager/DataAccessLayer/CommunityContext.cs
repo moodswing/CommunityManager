@@ -18,6 +18,7 @@ namespace CommunityManager.DataAccessLayer
         public DbSet<Publicacion> Publicaciones { get; set; }
         public DbSet<PublicacionVista> PublicacionesVistas { get; set; }
         public DbSet<PublicacionSeguida> PublicacionesSeguidas { get; set; }
+        public DbSet<Comentario> Comentarios { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -38,11 +39,18 @@ namespace CommunityManager.DataAccessLayer
             .HasForeignKey(f => f.UsuarioID)
             .WillCascadeOnDelete(false);
 
-            //modelBuilder.Entity<Publicacion>()
-            //.HasRequired(f => f.)
+            modelBuilder.Entity<Comentario>()
+            .HasRequired(f => f.Publicacion)
             //.WithMany()
-            //.HasForeignKey(f => f.PublicacionID)
-            //.WillCascadeOnDelete(false);
+            .WithMany(f => f.Comentarios)
+            .HasForeignKey(f => f.PublicacionId)
+            .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Comentario>()
+            .HasRequired(f => f.Usuario)
+            .WithMany()
+            .HasForeignKey(f => f.UsuarioId)
+            .WillCascadeOnDelete(false);
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }

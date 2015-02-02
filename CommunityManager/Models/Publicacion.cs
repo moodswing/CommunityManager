@@ -23,6 +23,8 @@ namespace CommunityManager.Models
         public virtual Usuario Usuario { get; set; }
 
         public TipoPublicacion TipoPublicacion { get; set; }
+
+        public virtual ICollection<Comentario> Comentarios { get; set; }
     }
 
     public enum TipoPublicacion

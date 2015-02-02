@@ -21,7 +21,6 @@ namespace CommunityManager.Models
         public string NumeroVivienda { get; set; }
 
         public virtual ICollection<Publicacion> Publicaciones { get; set; }
-        //public virtual ICollection<PublicacionVista> PublicacionesVistas { get; set; }
 
         public EstadoUsuario EstadoUsuario { get; set; }
     }

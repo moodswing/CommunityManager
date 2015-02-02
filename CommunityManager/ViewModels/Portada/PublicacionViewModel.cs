@@ -14,7 +14,10 @@ namespace CommunityManager.ViewModels.Portada
         public DateTime FechaIngreso { get; set; }
         public int VotosPositivos { get; set; }
         public int VotosNegativos { get; set; }
+        public string Comentario { get; set; }
         public TipoPublicacion TipoPublicacion { get; set; }
+
+        public List<ComentarioViewModel> Comentarios { get; set; }
     }
 
     public interface IPublicacionViewModel
@@ -25,6 +28,9 @@ namespace CommunityManager.ViewModels.Portada
         DateTime FechaIngreso { get; set; }
         int VotosPositivos { get; set; }
         int VotosNegativos { get; set; }
+        string Comentario { get; set; }
         TipoPublicacion TipoPublicacion { get; set; }
+
+        List<ComentarioViewModel> Comentarios { get; set; }
     }
 }

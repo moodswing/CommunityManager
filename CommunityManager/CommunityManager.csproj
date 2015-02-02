@@ -157,12 +157,17 @@
     <Content Include="Content\img\avatar.png" />
     <Content Include="Content\img\compartir-ico.png" />
     <Content Include="Content\img\ico-administracion.png" />
+    <Content Include="Content\img\ico-bad.png" />
     <Content Include="Content\img\ico-buscar.png" />
+    <Content Include="Content\img\ico-contra.png" />
     <Content Include="Content\img\ico-cuenta.png" />
     <Content Include="Content\img\ico-encuestas.png" />
+    <Content Include="Content\img\ico-favor.png" />
+    <Content Include="Content\img\ico-good.png" />
     <Content Include="Content\img\ico-propuestas.png" />
     <Content Include="Content\img\ico-reclamos.png" />
     <Content Include="Content\img\ico-regalos.png" />
+    <Content Include="Content\img\ico-seguimiento.png" />
     <Content Include="Content\img\ico-seguir.png" />
     <Content Include="Content\img\ico-servicios.png" />
     <Content Include="Content\img\ico-todo.png" />
@@ -247,7 +252,20 @@
     <Compile Include="Migrations\201501211919018_Migration3.Designer.cs">
       <DependentUpon>201501211919018_Migration3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201501291457020_Migration4.cs" />
+    <Compile Include="Migrations\201501291457020_Migration4.Designer.cs">
+      <DependentUpon>201501291457020_Migration4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501291533370_Migration5.cs" />
+    <Compile Include="Migrations\201501291533370_Migration5.Designer.cs">
+      <DependentUpon>201501291533370_Migration5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501291646358_Migration6.cs" />
+    <Compile Include="Migrations\201501291646358_Migration6.Designer.cs">
+      <DependentUpon>201501291646358_Migration6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Comentario.cs" />
     <Compile Include="Models\PublicacionSeguida.cs" />
     <Compile Include="Models\Publicacion.cs" />
     <Compile Include="Models\PublicacionVista.cs" />
@@ -261,6 +279,7 @@
     <Compile Include="ViewModels\Acceso\AccesoViewModel.cs" />
     <Compile Include="ViewModels\Acceso\IngresoDatosViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Portada\ComentarioViewModel.cs" />
     <Compile Include="ViewModels\Portada\PortadaViewModel.cs" />
     <Compile Include="ViewModels\Portada\PublicacionViewModel.cs" />
     <Compile Include="ViewModels\Portada\ResumenPublicacionViewModel.cs" />
@@ -277,6 +296,7 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Portada\Partial\_ResumenPublicacion.cshtml" />
     <Content Include="Views\Portada\Partial\_Publicacion.cshtml" />
+    <Content Include="Views\Portada\Partial\_Comentario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -296,6 +316,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201501211919018_Migration3.resx">
       <DependentUpon>201501211919018_Migration3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501291457020_Migration4.resx">
+      <DependentUpon>201501291457020_Migration4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501291533370_Migration5.resx">
+      <DependentUpon>201501291533370_Migration5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501291646358_Migration6.resx">
+      <DependentUpon>201501291646358_Migration6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
