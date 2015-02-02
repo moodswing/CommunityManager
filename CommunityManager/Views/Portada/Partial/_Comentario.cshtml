@@ -1,0 +1,16 @@
+﻿@using CommunityManager.Infrastructure.Extensions
+@model CommunityManager.ViewModels.Portada.ComentarioViewModel
+
+<div class="comment">
+    <div class="header">
+        @Model.Nombreusuario
+        <div class="date">
+            @Model.Fecha.ToString("d 'de'")
+            @Model.Fecha.ToString(" MMMM ").Capitalize()
+            @Model.Fecha.ToString(" 'de' yyyy")
+        </div>
+    </div>
+    <div class="content">
+        @Model.Texto
+    </div>
+</div>
